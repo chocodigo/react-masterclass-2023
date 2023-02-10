@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/react-masterclass-2023/precache-manifest.71d3b363e1cf76449b4a44fac4a9d44d.js"
+  "/react-masterclass-2023/precache-manifest.591e9aad18200de24a0e34755049c9b0.js"
 );
 
 self.addEventListener('message', (event) => {
