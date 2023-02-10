@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-masterclass-2023/static/js/main.5d001d7a.chunk.js",
-    "main.js.map": "/react-masterclass-2023/static/js/main.5d001d7a.chunk.js.map",
+    "main.js": "/react-masterclass-2023/static/js/main.0cfc8368.chunk.js",
+    "main.js.map": "/react-masterclass-2023/static/js/main.0cfc8368.chunk.js.map",
     "runtime-main.js": "/react-masterclass-2023/static/js/runtime-main.d22cc04c.js",
     "runtime-main.js.map": "/react-masterclass-2023/static/js/runtime-main.d22cc04c.js.map",
     "static/js/2.a5accd9f.chunk.js": "/react-masterclass-2023/static/js/2.a5accd9f.chunk.js",
     "static/js/2.a5accd9f.chunk.js.map": "/react-masterclass-2023/static/js/2.a5accd9f.chunk.js.map",
     "index.html": "/react-masterclass-2023/index.html",
-    "precache-manifest.591e9aad18200de24a0e34755049c9b0.js": "/react-masterclass-2023/precache-manifest.591e9aad18200de24a0e34755049c9b0.js",
+    "precache-manifest.8946326847a256884cfb6c09272fba06.js": "/react-masterclass-2023/precache-manifest.8946326847a256884cfb6c09272fba06.js",
     "service-worker.js": "/react-masterclass-2023/service-worker.js",
     "static/js/2.a5accd9f.chunk.js.LICENSE.txt": "/react-masterclass-2023/static/js/2.a5accd9f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d22cc04c.js",
     "static/js/2.a5accd9f.chunk.js",
-    "static/js/main.5d001d7a.chunk.js"
+    "static/js/main.0cfc8368.chunk.js"
   ]
 }
