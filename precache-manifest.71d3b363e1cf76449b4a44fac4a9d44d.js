@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c04e40601cb469a2ce78d01344557427",
+    "revision": "86eb300c02af78d7436c7330aff6bc2b",
     "url": "/react-masterclass-2023/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-masterclass-2023/static/js/2.a5accd9f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "4f73b0138164b42844b8",
-    "url": "/react-masterclass-2023/static/js/main.92378956.chunk.js"
+    "revision": "4b7c02bfff953b679960",
+    "url": "/react-masterclass-2023/static/js/main.51e86514.chunk.js"
   },
   {
     "revision": "7d4207941bf8333915f0",
