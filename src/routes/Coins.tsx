@@ -5,10 +5,15 @@ import { useQuery } from "react-query";
 import { fetchCoins } from "../api";
 import { Helmet } from "react-helmet-async";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { isDarkAtom } from "../atoms";
 
 const Title = styled.h1`
   color: ${(props) => props.theme.accentColor};
   font-size: 48px;
+  font-family: "Source Sans Pro", sans-serif;
 `;
 
 const Container = styled.div`
@@ -72,19 +77,42 @@ interface ICoin {
   is_active: boolean;
   type: string;
 }
+const ThemeChangeButton = styled.button`
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: ${(props) => props.theme.containerBgColor};
+  padding: 7px;
+  border-radius: 10px;
+  color: ${(props) => props.theme.containerTextColor};
+  &:hover {
+    color: ${(props) => props.theme.accentContainerBgColor};
+    background-color: ${(props) => props.theme.accentContainerTextColor};
+  }
+  &:active {
+    color: ${(props) => props.theme.accentOnColor};
+    background-color: ${(props) => props.theme.accentColor};
+  }
+`;
 
 // 코인 목록
 
 function Coins() {
   const { isLoading, data: coins } = useQuery<ICoin[]>("allCoins", fetchCoins);
-
+  const isDark = useRecoilValue(isDarkAtom);
+  const setDarkAtom = useSetRecoilState(isDarkAtom);
+  const toggleDarkAtom = () => setDarkAtom((prev) => !prev);
   return (
     <Container>
       <Helmet>
         <title>코인</title>
       </Helmet>
       <Header>
-        <Title>코인</Title>
+        <Title>Coins</Title>
+        <ThemeChangeButton onClick={toggleDarkAtom}>
+          {isDark ? <LightModeIcon /> : <DarkModeIcon />}
+        </ThemeChangeButton>
       </Header>
       {isLoading ? (
         <Loader>Loading ...</Loader>
@@ -94,7 +122,7 @@ function Coins() {
             <Coin key={coin.id}>
               <Link
                 to={{
-                  pathname: `/${coin.id}`,
+                  pathname: `${process.env.PUBLIC_URL}/${coin.id}`,
                   state: { name: coin.name },
                 }}
               >

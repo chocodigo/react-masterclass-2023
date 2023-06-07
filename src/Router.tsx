@@ -8,10 +8,10 @@ function Router() {
     <BrowserRouter>
       {/*한 번에 하나의 Route를 렌더링할 수 있는 방법*/}
       <Switch>
-        <Route path={"/:coinId"}>
+        <Route path={process.env.PUBLIC_URL + "/:coinId"}>
           <Coin />
         </Route>
-        <Route path={"/"}>
+        <Route path={process.env.PUBLIC_URL + "/"}>
           <Coins />
         </Route>
       </Switch>

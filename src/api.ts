@@ -23,3 +23,13 @@ export function fetchCoinHistory(coinId: string) {
     `https://ohlcv-api.nomadcoders.workers.dev?coinId=${coinId}`
   ).then((response) => response.json());
 }
+
+const _BASE_URL = "https://disney_api.nomadcoders.workers.dev/characters";
+
+export function fetchCharacters() {
+  return fetch(`${_BASE_URL}/`).then((response) => response.json());
+}
+
+export function fetchCharacterDetail(id: string) {
+  return fetch(`${_BASE_URL}/${id}`).then((response) => response.json());
+}

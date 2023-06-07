@@ -6,6 +6,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { darkTheme, lightTheme } from "./theme";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
+import { useRecoilValue } from "recoil";
+import { isDarkAtom } from "./atoms";
 const GlobalStyle = createGlobalStyle`
   
   /* http://meyerweb.com/eric/tools/css/reset/
@@ -77,36 +79,11 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 `;
-const ThemeChangeButton = styled.button`
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 400;
-  background-color: ${(props) => props.theme.containerBgColor};
-  padding: 7px;
-  border-radius: 10px;
-  color: ${(props) => props.theme.containerTextColor};
-  &:hover {
-    color: ${(props) => props.theme.accentContainerBgColor};
-    background-color: ${(props) => props.theme.accentContainerTextColor};
-  }
-  &:active {
-    color: ${(props) => props.theme.accentOnColor};
-    background-color: ${(props) => props.theme.accentColor};
-  }
-`;
+
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-
-  const themeClickHandler = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
+  const isDark = useRecoilValue(isDarkAtom);
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <ThemeChangeButton onClick={themeClickHandler}>
-        {isDarkMode ? <LightModeIcon /> : <DarkModeIcon />}
-      </ThemeChangeButton>
+    <ThemeProvider theme={isDark ? darkTheme : lightTheme}>
       <GlobalStyle />
       <HelmetProvider>
         <Router />
