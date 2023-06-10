@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useRecoilValue } from "recoil";
 import { round, goal } from "../atoms";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 interface IProps {
   title: string;

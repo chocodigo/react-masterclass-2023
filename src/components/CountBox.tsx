@@ -5,7 +5,7 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 
 const Box = styled(motion.div)`
   width: 200px;

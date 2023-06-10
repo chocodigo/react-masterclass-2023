@@ -3,7 +3,7 @@ import CountBox from "./components/CountBox";
 import Reslut from "./components/Result";
 import { round, goal } from "./atoms";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import styled from "@emotion/styled";
+import styled from "styled-components";
 import {
   AnimatePresence,
   motion,
@@ -105,7 +105,7 @@ const Counter = () => {
         initialTime.current -= 1;
         setSeconds(initialTime.current % 60);
         setMinute(Math.floor(initialTime.current / 60));
-        if (initialTime.current <= 0) {
+        if (initialTime.current < 0) {
           clearInterval(interval.current);
           setIsStart(false);
           setMinute(INIT_MINUTE);
