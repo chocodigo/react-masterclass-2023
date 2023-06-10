@@ -7,6 +7,7 @@ import { RecoilRoot } from "recoil";
 import { createGlobalStyle } from "styled-components";
 import _814 from "./_8.14";
 import _815 from "./_8.15";
+import Counter from "./Counter";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -90,7 +91,8 @@ root.render(
         <GlobalStyle />
         {/*<App />*/}
         {/*<_814 />*/}
-        <_815 />
+        {/*<_815 />*/}
+        <Counter />
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>
