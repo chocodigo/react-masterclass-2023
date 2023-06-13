@@ -88,9 +88,9 @@ root.render(
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
-        {/*<App />*/}
+        <App />
         {/*<_814 />*/}
-        <_815 />
+        {/*<_815 />*/}
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>

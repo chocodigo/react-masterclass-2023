@@ -1,18 +1,17 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Coins from "./routes/Coins";
-import Coin from "./routes/Coin";
+import Header from "./pages/Header";
+import Popular from "./pages/Popular";
+
 
 function Router() {
   return (
     <BrowserRouter>
       {/*한 번에 하나의 Route를 렌더링할 수 있는 방법*/}
+          <Header/>
       <Switch>
-        <Route path={process.env.PUBLIC_URL + "/:coinId"}>
-          <Coin />
-        </Route>
-        <Route path={process.env.PUBLIC_URL + "/"}>
-          <Coins />
+        <Route path={"/"}>
+            <Popular/>
         </Route>
       </Switch>
     </BrowserRouter>
