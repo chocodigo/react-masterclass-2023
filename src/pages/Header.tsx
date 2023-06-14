@@ -14,8 +14,8 @@ const Header = () =>{
 
     return <Wrapper>
         <Link to={'/'}>POPULAR</Link>
-        <Link to={'/'}>COMING SOON</Link>
-        <Link to={'/'}>NOW PLAYING</Link>
+        <Link to={'/coming-soon'}>COMING SOON</Link>
+        <Link to={'/now-playing'}>NOW PLAYING</Link>
     </Wrapper>
 }
 

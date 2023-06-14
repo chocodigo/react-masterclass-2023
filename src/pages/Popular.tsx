@@ -10,7 +10,7 @@ const Popular = () =>{
     const { isLoading, data:movies } = useQuery<IAPIResponse>("popularMovies", getPopular);
     return !isLoading?<Wrapper>
         {
-            movies?.results?.map(movie=> <div>
+            movies?.results?.map((movie,index)=> <div key={`popular_${movie}_${index}`}>
                 <img src={makeImagePath(movie?.poster_path)}/>
                 <p>{movie.title}</p>
             </div>)
