@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Header from "./pages/Header";
 import Popular from "./pages/Popular";
 import Comingsoon from "./pages/Comingsoon";
+import NowPlaying from "./pages/NowPlaying";
 
 
 function Router() {
@@ -14,10 +15,12 @@ function Router() {
             <Route path={'/coming-soon'}>
                 <Comingsoon/>
             </Route>
+            <Route path={'/now-playing'}>
+                <NowPlaying />
+            </Route>
             <Route path={"/"}>
                 <Popular/>
             </Route>
-
         </Switch>
     </BrowserRouter>
   );
