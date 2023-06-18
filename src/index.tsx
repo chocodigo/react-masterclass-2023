@@ -5,8 +5,6 @@ import App from "./App";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { RecoilRoot } from "recoil";
 import { createGlobalStyle } from "styled-components";
-import _814 from "./_8.14";
-import _815 from "./_8.15";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -90,8 +88,6 @@ root.render(
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
         <App />
-        {/*<_814 />*/}
-        {/*<_815 />*/}
       </QueryClientProvider>
     </RecoilRoot>
   </React.StrictMode>
