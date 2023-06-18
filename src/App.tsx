@@ -9,6 +9,9 @@ import {
 } from "framer-motion";
 import Header from "./pages/Header";
 import Router from "./Router";
+import Modal from "./components/Modal";
+import { useRecoilState } from "recoil";
+import { movieId } from "./atoms";
 
 export const Wrapper = styled(motion.div)`
   height: 100vh;
@@ -194,10 +197,20 @@ function App() {
       };
     },
   };
+  const [id, setId] = useRecoilState(movieId);
+  useEffect(() => {
+    if (id !== -1) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [id]);
   return (
     <>
-
-      <Router/>
+      <AnimatePresence>
+        {id !== -1 && <Modal id={id} layoutId={id + ""} />}
+      </AnimatePresence>
+      <Router />
     </>
   );
 }
