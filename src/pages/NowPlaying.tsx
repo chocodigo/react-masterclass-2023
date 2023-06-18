@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 import { movieId } from "../atoms";
 import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -22,7 +22,26 @@ const MovieBox = styled(motion.div)`
     width: 300px;
   }
 `;
+const wrapperVariants = {
+  start: {},
+  end: {
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.2,
+    },
+  },
+};
 
+const movieVariants = {
+  start: {
+    opacity: 0,
+    y: 10,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+  },
+};
 const NowPlaying = () => {
   const [id, setId] = useRecoilState(movieId);
   const { isLoading, data: movies } = useQuery<IAPIResponse>(
@@ -30,7 +49,7 @@ const NowPlaying = () => {
     getNowPlaying
   );
   return !isLoading ? (
-    <Wrapper>
+    <Wrapper variants={wrapperVariants} initial="start" animate="end">
       {movies?.results?.map((movie, index) => (
         <MovieBox
           key={movie.id}
@@ -38,6 +57,7 @@ const NowPlaying = () => {
           onClick={() => {
             setId(movie.id);
           }}
+          variants={movieVariants}
         >
           <img src={makeImagePath(movie?.poster_path)} />
           <p>{movie.title}</p>

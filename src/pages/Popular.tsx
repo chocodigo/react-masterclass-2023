@@ -13,7 +13,7 @@ import { useRecoilState } from "recoil";
 import { movieId } from "../atoms";
 import { useLocation } from "react-router-dom";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
@@ -29,6 +29,26 @@ const MovieBox = styled(motion.div)`
     width: 300px;
   }
 `;
+const wrapperVariants = {
+  start: {},
+  end: {
+    transition: {
+      delayChildren: 0.5,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const movieVariants = {
+  start: {
+    opacity: 0,
+    y: 10,
+  },
+  end: {
+    opacity: 1,
+    y: 0,
+  },
+};
 
 const Popular = () => {
   const [id, setId] = useRecoilState(movieId);
@@ -39,7 +59,7 @@ const Popular = () => {
   );
 
   return !isLoading ? (
-    <Wrapper>
+    <Wrapper variants={wrapperVariants} initial="start" animate="end">
       {movies?.results?.map((movie, index) => (
         <MovieBox
           key={movie.id}
@@ -47,6 +67,7 @@ const Popular = () => {
           onClick={() => {
             setId(movie.id);
           }}
+          variants={movieVariants}
         >
           <img src={makeImagePath(movie?.poster_path)} />
           <p>{movie.title}</p>

@@ -73,8 +73,9 @@ const GlobalStyle = createGlobalStyle`
   body{
     font-weight: 300;
     font-family: 'Source Sans Pro', sans-serif;
-
+    background-color: black;
     line-height: 1.2;
+    color:white;
   }
   a{
     text-decoration: none;
